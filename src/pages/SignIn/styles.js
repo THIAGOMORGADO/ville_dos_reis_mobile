@@ -15,7 +15,7 @@ flex: 1;
 
 export const Body = styled.View`
   background-color: #fff;
-  height: 40%;
+  height: 35%;
   align-items: center;
   justify-content:center;
 `
@@ -56,11 +56,11 @@ export const ButtonArea = styled.View`
   background-color: #C99F6C;;
   width: 80%;
   height: 50px;
-  margin-top: 20px;
+  margin-top: 10px;
   align-items: center;
   justify-content: center;
   margin-left: 40px;
-  margin-top: 50px;
+  margin-top: 20px;
   margin-bottom: 10%;
   border-radius: 10px;
   
@@ -75,6 +75,7 @@ export const LabelButton = styled.Text`
 export const Rodape = styled.View`
   flex-direction: row;
   width: 100%;
+ 
   
 `
 export const Area01 = styled.View`
@@ -94,9 +95,10 @@ export const Area03 = styled.View`
   flex: 3;  
 `
 export const InforArea = styled.View`
-  flex-direction: row;
+  flex-direction: column;
   background-color: #fff;
-  height: 70px;
+  justify-content: flex-end;
+  height: 10%;
   align-items: center;
   
   justify-content: center;

@@ -8,8 +8,6 @@ export default function SplashScreen() {
    <Container>
       <StatusBar barStyle='light-content'/>
       <Logo source={require('../../../assets/logo.png')}/>
-      <LogoTitle>Vale</LogoTitle>
-      <SubTitle>Dos Reis</SubTitle>
       <ActivityIndicator size="large" color="#C99F6C" />
    </Container>
   );
