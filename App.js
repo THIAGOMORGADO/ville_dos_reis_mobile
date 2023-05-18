@@ -7,6 +7,8 @@ import {useFonts,
 import { StatusBar } from 'react-native';
 
 import Routes from './src/routes';
+import { NavigationContainer } from '@react-navigation/native';
+
 export default function App() {
   const [fontsLoaded] = useFonts({
      Montserrat_400Regular,
@@ -17,11 +19,12 @@ export default function App() {
     return null
   }  
   return (
-    <>
+  <>
+    <NavigationContainer>
       <StatusBar barStyle={'light-content'}/>
       <Routes />
-      
-    </>
+    </NavigationContainer>
+  </>
   );
 }
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import SignIn from "../pages/SignIn";
 import SplashScreen from "../components/SplashScreen";
+import MainStack from "./MainStack";
 
 export default function Routes() {
   const [loaded, setLoaded] = useState(true);
@@ -15,7 +16,9 @@ export default function Routes() {
   }
   return (
     <>
+    <MainStack>
       <SignIn />
+    </MainStack>
     </>
   );
 }
