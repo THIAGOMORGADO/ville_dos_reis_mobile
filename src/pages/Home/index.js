@@ -1,26 +1,17 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { View, Text } from 'react-native'
-import { useRoute } from '@react-navigation/native'
+
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { AuthContext } from '../../contexts/auth';
 
 export default function Home() {
-  const route = useRoute()
-  const token = route?.params?.token  ?? ''
-  const user = route?.params?.user  ?? ''
-
-  console.log(user)
-
-  async function getUser() {
-
-  }
-  getUser()
-  
+  const {user} = useContext(AuthContext);
 
   return (
     <SafeAreaView>
       <View>
-        <Text>Nome: {token}</Text>
-        <Text>User: {user.name}</Text>
+        <Text>Nome: {user.token}</Text>
+        <Text>User: {user.email}</Text>
 
       </View>
     </SafeAreaView>

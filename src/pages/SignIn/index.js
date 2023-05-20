@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { StatusBar, View, KeyboardAvoidingView, Platform } from "react-native";
 
 import { useNavigation } from "@react-navigation/native";
@@ -26,36 +26,18 @@ import {
   Info,
 } from "./styles";
 import InputText from "../../components/Input";
+import { AuthContext } from "../../contexts/auth";
 
 
 export default function SignIn() {
-  const navigation = useNavigation()
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [token, setToken] = useState("");
-  const [user, setUser] = useState({});
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
-  async function handleSignIn() {
-    try {
-      const response = await api.post('login', {
-        email,
-        password
-      })  
-      const {token, user} = response.data;
-      setToken(token)
-      setUser(user);
-    } catch (error) {
-      //console.log(error?.response?.data?.message);
-    }
+  const {signIn} = useContext(AuthContext);
+
+  function handleLogin() {
+    signIn(email, password)
   }
-
-  useEffect(() => {
-    if(token) {
-      navigation.navigate("Home", { token: token, user: user})
-    }
-  },[user])
-
- 
 
   return (
       <Container>
@@ -91,7 +73,7 @@ export default function SignIn() {
                 onChangeText={(text) => setPassword(text)}              
               />
               <ButtonArea>
-                <Button onPress={handleSignIn}>
+                <Button onPress={handleLogin}>
                   <LabelButton>Entrar</LabelButton>
                 </Button>
               </ButtonArea>
